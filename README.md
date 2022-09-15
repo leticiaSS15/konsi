@@ -1,16 +1,21 @@
-# teste_konsi
+# Um aplicativo Flutter para busca de CEP
 
-A new Flutter project.
+O aplicativo fornece a funcinalidade de pesquisa de endereço via CEP e a criação de uma lista de CEPs favoritados.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## API
 
-A few resources to get you started if this is your first Flutter project:
+Este aplicativo utiliza a API do ViaCEP para suas requisições
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Link: https://viacep.com.br/
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Packages
+
+- flutter_modular: ^5.0.3
+- http: ^0.13.5
+- mask_text_input_formatter: ^2.4.0
+- hive: ^2.2.3
+- hive_flutter: ^1.1.0
+- build_runner: ^2.2.0
+- hive_generator: ^1.1.3
