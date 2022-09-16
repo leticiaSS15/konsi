@@ -3,11 +3,13 @@
 O aplicativo fornece a funcinalidade de pesquisa de endereço via CEP e a criação de uma lista de CEPs favoritados.
 
 
-## API
+## Estrutura
 
 Este aplicativo utiliza a API do ViaCEP para suas requisições
 
 Link: https://viacep.com.br/
+
+Dentro do app é possível criar uma lista de CEPs favoritos,salvando os dados contidos na resposta do CEP de maneira local, por meio do Hive Database.
 
 
 ## Packages
