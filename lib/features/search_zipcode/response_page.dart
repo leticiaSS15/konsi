@@ -38,11 +38,7 @@ class _ResponseCepPageState extends State<ResponseCepPage> {
               widget.snapshot.data!.cep,
               widget.snapshot.data!.logradouro,
             ),
-            expandedRow(
-                'Complemento',
-                'Bairro',
-                widget.snapshot.data!.complemento,
-                widget.snapshot.data!.bairro),
+            expandedRow('Complemento', 'Bairro', widget.snapshot.data!.complemento, widget.snapshot.data!.bairro),
             expandedRow(
               'Localidade',
               'UF',
@@ -88,8 +84,7 @@ class _ResponseCepPageState extends State<ResponseCepPage> {
                 filled: true,
                 fillColor: Colors.grey.shade300,
                 labelText: data == '' ? 'Não informado' : data,
-                border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
               ),
             ),
           ),
@@ -124,9 +119,8 @@ class _ResponseCepPageState extends State<ResponseCepPage> {
           ),
           ElevatedButton(
             onPressed: () async {},
-            style: ElevatedButton.styleFrom(
-                primary: AppColors.bottomColorGreen,
-                fixedSize: const Size(200, 50)),
+            style:
+                ElevatedButton.styleFrom(backgroundColor: AppColors.bottomColorGreen, fixedSize: const Size(200, 50)),
             child: const Text(
               'VER NO MAPA',
               style: TextStyle(fontSize: 20),
@@ -139,24 +133,12 @@ class _ResponseCepPageState extends State<ResponseCepPage> {
 
   favoriteAddress() {
     var newFavorite = FavoriteModel(
-      cep: widget.snapshot.data!.cep.isEmpty
-          ? 'Não Informado'
-          : widget.snapshot.data!.cep,
-      logradouro: widget.snapshot.data!.logradouro!.isEmpty
-          ? 'Não Informado'
-          : widget.snapshot.data!.logradouro,
-      complemento: widget.snapshot.data!.complemento!.isEmpty
-          ? 'Não Informado'
-          : widget.snapshot.data!.complemento,
-      bairro: widget.snapshot.data!.bairro.isEmpty
-          ? 'Não Informado'
-          : widget.snapshot.data!.bairro,
-      localidade: widget.snapshot.data!.localidade.isEmpty
-          ? 'Não Informado'
-          : widget.snapshot.data!.localidade,
-      uf: widget.snapshot.data!.uf.isEmpty
-          ? 'Não Informado'
-          : widget.snapshot.data!.uf,
+      cep: widget.snapshot.data!.cep.isEmpty ? 'Não Informado' : widget.snapshot.data!.cep,
+      logradouro: widget.snapshot.data!.logradouro!.isEmpty ? 'Não Informado' : widget.snapshot.data!.logradouro,
+      complemento: widget.snapshot.data!.complemento!.isEmpty ? 'Não Informado' : widget.snapshot.data!.complemento,
+      bairro: widget.snapshot.data!.bairro.isEmpty ? 'Não Informado' : widget.snapshot.data!.bairro,
+      localidade: widget.snapshot.data!.localidade.isEmpty ? 'Não Informado' : widget.snapshot.data!.localidade,
+      uf: widget.snapshot.data!.uf.isEmpty ? 'Não Informado' : widget.snapshot.data!.uf,
     );
     return newFavorite;
   }

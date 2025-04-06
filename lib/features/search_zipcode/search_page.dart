@@ -18,8 +18,7 @@ class _HomeSearchPageState extends State<HomeSearchPage> {
   late Future<RespostaBuscaCep> respostaPesquisa;
   late ResponseCepPage responseCepPage;
   TextEditingController campoCep = TextEditingController();
-  var cepMask = MaskTextInputFormatter(
-      mask: '#####-###', filter: {"#": RegExp(r'[0-9]')});
+  var cepMask = MaskTextInputFormatter(mask: '#####-###', filter: {"#": RegExp(r'[0-9]')});
   bool flagBottom = false;
 
   Future<RespostaBuscaCep> buscarCep() async {
@@ -66,9 +65,7 @@ class _HomeSearchPageState extends State<HomeSearchPage> {
                 padding: const EdgeInsets.only(top: 200),
                 child: Container(
                   decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image:
-                            AssetImage('assets/images/bannerSearchPage1.png')),
+                    image: DecorationImage(image: AssetImage('assets/images/bannerSearchPage1.png')),
                   ),
                 ),
               )
@@ -146,7 +143,7 @@ class _HomeSearchPageState extends State<HomeSearchPage> {
           falgButtom = false;
         },
         style: ElevatedButton.styleFrom(
-          primary: corBottom,
+          backgroundColor: corBottom,
         ),
         child: SizedBox(
           height: 50,
