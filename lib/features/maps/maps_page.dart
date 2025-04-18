@@ -18,8 +18,8 @@ class _MapsHomePageState extends State<MapsHomePage> {
         centerTitle: true,
         title: const Text('Mapa'),
       ),
-      body: Column(
-        children: const [
+      body: const Column(
+        children: [
           Padding(
             padding: EdgeInsets.only(left: 100, right: 100, top: 50),
             child: SizedBox(
