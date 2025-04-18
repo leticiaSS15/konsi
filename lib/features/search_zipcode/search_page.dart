@@ -22,7 +22,7 @@ class _HomeSearchPageState extends State<HomeSearchPage> {
   bool flagBottom = false;
 
   Future<RespostaBuscaCep> buscarCep() async {
-    String url = '';
+    var url;
     String cep = '';
 
     setState(() {
@@ -90,10 +90,10 @@ class _HomeSearchPageState extends State<HomeSearchPage> {
       color: AppColors.backgroundColor,
       child: Column(
         children: [
-          const Padding(
-            padding: EdgeInsets.only(top: 20, bottom: 10, left: 20),
+          Padding(
+            padding: const EdgeInsets.only(top: 20, bottom: 10, left: 20),
             child: Row(
-              children: [
+              children: const [
                 Text(
                   'Digite o CEP:',
                   style: TextStyle(
