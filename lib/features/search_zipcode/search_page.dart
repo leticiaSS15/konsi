@@ -90,10 +90,10 @@ class _HomeSearchPageState extends State<HomeSearchPage> {
       color: AppColors.backgroundColor,
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 20, bottom: 10, left: 20),
+          const Padding(
+            padding: EdgeInsets.only(top: 20, bottom: 10, left: 20),
             child: Row(
-              children: const [
+              children: [
                 Text(
                   'Digite o CEP:',
                   style: TextStyle(
@@ -116,6 +116,7 @@ class _HomeSearchPageState extends State<HomeSearchPage> {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: TextFormField(
+        key: const Key('cepInputField'),
         inputFormatters: [cepMask],
         controller: campoCep,
         keyboardType: TextInputType.number,
@@ -133,14 +134,15 @@ class _HomeSearchPageState extends State<HomeSearchPage> {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: ElevatedButton(
+        key: const Key('searchButton'),
         onPressed: () async {
           if (campoCep.text.isEmpty) {
             snackBar("Por favor, digite um CEP válido");
           }
-          bool falgButtom = true;
-          falgButtom ? const CircularProgressIndicator() : null;
+          const CircularProgressIndicator();
           await buscarCep();
-          falgButtom = false;
+          // ignore: use_build_context_synchronously
+          FocusScope.of(context).unfocus();
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: corBottom,

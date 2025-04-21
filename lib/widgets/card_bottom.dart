@@ -9,9 +9,7 @@ class CardBottom extends StatelessWidget {
   String? title;
   IconData? icon;
   Color? color;
-  CardBottom(
-      {this.title, this.icon, this.color, required this.toNavigate, Key? key})
-      : super(key: key);
+  CardBottom({this.title, this.icon, this.color, required this.toNavigate, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +17,7 @@ class CardBottom extends StatelessWidget {
       height: 100,
       width: 350,
       child: GestureDetector(
+        key: key,
         onTap: (() {
           Modular.to.pushNamed(toNavigate);
         }),

@@ -96,37 +96,40 @@ class _ResponseCepPageState extends State<ResponseCepPage> {
   Widget rowBottomFavorit() {
     return Padding(
       padding: const EdgeInsets.all(15.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          IconButton(
-            color: flagBottom ? Colors.red : Colors.grey,
-            onPressed: () async {
-              setState(() {
-                flagBottom ? flagBottom = false : flagBottom = true;
-              });
-              var newFavorite = favoriteAddress();
-              await favoriteBox.add(newFavorite);
-              snackBar('CEP salvo nos favoritos');
-            },
-            icon: const Icon(
-              Icons.favorite,
-              size: 50,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            IconButton(
+              color: flagBottom ? Colors.red : Colors.grey,
+              onPressed: () async {
+                setState(() {
+                  flagBottom ? flagBottom = false : flagBottom = true;
+                });
+                var newFavorite = favoriteAddress();
+                await favoriteBox.add(newFavorite);
+                snackBar('CEP salvo nos favoritos');
+              },
+              icon: const Icon(
+                Icons.favorite,
+                size: 50,
+              ),
             ),
-          ),
-          const SizedBox(
-            width: 75,
-          ),
-          ElevatedButton(
-            onPressed: () async {},
-            style:
-                ElevatedButton.styleFrom(backgroundColor: AppColors.bottomColorGreen, fixedSize: const Size(200, 50)),
-            child: const Text(
-              'VER NO MAPA',
-              style: TextStyle(fontSize: 20),
+            const SizedBox(
+              width: 75,
             ),
-          ),
-        ],
+            ElevatedButton(
+              onPressed: () async {},
+              style:
+                  ElevatedButton.styleFrom(backgroundColor: AppColors.bottomColorGreen, fixedSize: const Size(200, 50)),
+              child: const Text(
+                'VER NO MAPA',
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

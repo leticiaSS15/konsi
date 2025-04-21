@@ -11,12 +11,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool _isExpanded = false;
-
+  @override
   initState() {
     super.initState();
-
-    _isExpanded = false;
   }
 
   @override
@@ -60,6 +57,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           _initialCardImage(),
           CardBottom(
+            key: const Key('cardSearchCep'),
             title: 'Buscar por \n cep',
             icon: Icons.search,
             color: AppColors.bottomColorGreen,
